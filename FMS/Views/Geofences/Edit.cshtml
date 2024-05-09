@@ -1,0 +1,64 @@
+﻿@model FMS.Models.EfModels.Geofence
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Geofence</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GeofenceId" />
+            <div class="form-group">
+                <label asp-for="GeofenceType" class="control-label"></label>
+                <input asp-for="GeofenceType" class="form-control" />
+                <span asp-validation-for="GeofenceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedDate" class="control-label"></label>
+                <input asp-for="AddedDate" class="form-control" />
+                <span asp-validation-for="AddedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrockColor" class="control-label"></label>
+                <input asp-for="StrockColor" class="form-control" />
+                <span asp-validation-for="StrockColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrockOpacity" class="control-label"></label>
+                <input asp-for="StrockOpacity" class="form-control" />
+                <span asp-validation-for="StrockOpacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrockWeight" class="control-label"></label>
+                <input asp-for="StrockWeight" class="form-control" />
+                <span asp-validation-for="StrockWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FillColor" class="control-label"></label>
+                <input asp-for="FillColor" class="form-control" />
+                <span asp-validation-for="FillColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FillOpacity" class="control-label"></label>
+                <input asp-for="FillOpacity" class="form-control" />
+                <span asp-validation-for="FillOpacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

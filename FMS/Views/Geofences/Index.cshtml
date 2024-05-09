@@ -1,0 +1,71 @@
+﻿@model IEnumerable<FMS.Models.EfModels.Geofence>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GeofenceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrockColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrockOpacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StrockWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FillColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FillOpacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeofenceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrockColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrockOpacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StrockWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FillColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FillOpacity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GeofenceId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GeofenceId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GeofenceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
